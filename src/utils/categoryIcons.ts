@@ -1,5 +1,5 @@
 
-import { CategoryIconMap } from "@/types";
+import { CategoryIconMap, CustomCategories } from "@/types";
 
 // Default category icons
 export const categoryIcons: CategoryIconMap = {
@@ -53,6 +53,14 @@ export const getIncomeCategories = (): string[] => {
     "Gifts",
     "Other"
   ];
+};
+
+// Get all categories including custom ones
+export const getAllCategories = (customCategories: CustomCategories) => {
+  return {
+    expense: [...getExpenseCategories(), ...customCategories.expense],
+    income: [...getIncomeCategories(), ...customCategories.income]
+  };
 };
 
 // Get icon for a category

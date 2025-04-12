@@ -25,3 +25,8 @@ export interface MonthlyData {
 export interface CategoryIconMap {
   [key: string]: string;
 }
+
+export interface CustomCategories {
+  expense: string[];
+  income: string[];
+}
